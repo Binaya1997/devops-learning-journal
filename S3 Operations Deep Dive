@@ -1,0 +1,16 @@
+## Day 2: S3 Operations Deep Dive
+
+### What I Did
+- Created buckets in multiple regions (us-east-1, eu-west-1, ap-south-1)
+- Used `aws s3 sync` to upload entire folder structures
+- Deleted individual files and entire buckets
+- Enabled S3 versioning and observed multiple file versions
+
+### New Commands Learned
+```bash
+aws s3 sync &lt;local&gt; &lt;s3://bucket/&gt;          # Recursive upload
+aws s3 rm s3://bucket/file.txt              # Delete single file
+aws s3 rm s3://bucket/ --recursive          # Empty bucket
+aws s3 rb s3://bucket                       # Delete bucket
+aws s3api put-bucket-versioning             # Enable versioning
+aws s3api list-object-versions              # View all versions
